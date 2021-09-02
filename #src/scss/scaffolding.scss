@@ -1,9 +1,13 @@
 body {
+  margin: 0;
+  padding: 0;
   min-width: 320px;
 
   overflow-x: hidden;
 
   transition: all 0.3s ease;
+
+  background: #5e5e5e;
 }
 
 .visually-hidden:not(:focus):not(:active),
