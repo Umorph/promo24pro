@@ -3,7 +3,7 @@
 
 .feedback {
   margin: 0;
-  padding: 0;
+  padding: 0 0 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -12,6 +12,10 @@
 
   background: url("../img/call-back.jpg") center no-repeat;
   background-size: cover;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 80px;
+  }
 }
 
 .feedback__inner {
