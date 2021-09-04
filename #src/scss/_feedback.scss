@@ -162,3 +162,15 @@
     margin-left: 35px;
   }
 }
+
+.feedback__social-link {
+  margin: 0;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+  }
+
+  @include smooth;
+}

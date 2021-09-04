@@ -34,3 +34,13 @@ burgerButton.addEventListener('click', () => {
   toggleOpenedClass(burgerWindow)
   toggleOpenedClass(burgerButton)
 })
+
+//close burger window after click
+const anchorLinks = document.querySelectorAll('.anchor-nav__link')
+
+anchorLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    toggleOpenedClass(burgerWindow)
+    toggleOpenedClass(burgerButton)
+  })
+})

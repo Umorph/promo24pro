@@ -10,15 +10,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
-
-  @media screen and (min-width: 768px){
-    box-shadow: none;
-  }
 }
 
 .anchor-nav__burger-button {
@@ -35,6 +26,8 @@
   border-radius: 50%;
 
   cursor: pointer;
+
+  z-index: 1;
 
   &::before,
   &::after {
@@ -61,17 +54,29 @@
     transform: translateX(-1.75px) rotate(-45deg);
   }
 
+  &--opened {
+    &::before {
+      transform: translateX(-8.25px) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translateX(-1.75px) rotate(45deg);
+    }
+  }
+
   @media screen and (min-width: 768px) {
     display: none;
   }
 }
 
 .anchor-nav__nav-list {
+  position: absolute;
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   width: 100%;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -79,12 +84,21 @@
   list-style: none;
 
   background: $trueWhite;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateY(-50vh);
+  z-index: -1;
+
+  @include smooth;
 
   &--opened {
-    display: flex;
+    transform: translateY(0);
   }
 
   @media screen and (min-width: 768px) {
+    position: static;
+
     margin: 0;
     padding: 0 0 0 20px;
     display: flex;
@@ -93,6 +107,10 @@
     align-items: center;
 
     border-radius: 0;
+    box-shadow: none;
+    transform: translateY(0);
+    z-index: 0;
+
   }
 }
 
@@ -110,6 +128,7 @@
 }
 
 .anchor-nav__link {
+  position: relative;
   margin: 0;
   padding: 0;
 
@@ -120,4 +139,26 @@
   line-height: 18px;
   color: $blackMain;
   text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 100%;
+
+    display: block;
+    height: 1px;
+
+    background: $blackMain;
+
+    @include smooth
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      right: 0;
+    }
+  }
 }

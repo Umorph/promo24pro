@@ -67,6 +67,13 @@
 .footer__social-link {
   margin: 0;
   padding: 0;
+
+  &:hover,
+  &:focus {
+    box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+  }
+
+  @include smooth;
 }
 
 .footer__social-icon {
@@ -107,6 +114,8 @@
 }
 
 .footer__contacts-link {
+  position: relative;
+
   margin: 0;
   padding: 0;
 
@@ -117,4 +126,26 @@
   line-height: 20px;
   color: $trueWhite;
   text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 100%;
+
+    display: block;
+    height: 1px;
+
+    background: $trueWhite;
+
+    @include smooth
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      right: 0;
+    }
+  }
 }

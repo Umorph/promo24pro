@@ -32,7 +32,8 @@ input[type="radio"].visually-hidden {
 
 a,
 button,
-input {
+input,
+textarea {
   &:focus {
     outline: none;
   }
