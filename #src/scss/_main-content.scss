@@ -16,33 +16,45 @@
   margin: 0;
   padding: 0;
 
-  scroll-margin-top: 122px;
+  scroll-margin-top: 145px;
+
+  @media screen and (min-width: 768px) {
+    scroll-margin-top: 122px;
+  }
 }
 
 .main-content__about {
   margin: 0;
   padding: 0;
 
-  scroll-margin-top: 122px;
+  scroll-margin-top: 165px;
+
+  @media screen and (min-width: 768px) {
+    scroll-margin-top: 122px;
+  }
 }
 
 .main-content__services {
   margin: 50px 0 0;
   padding: 0 20px;
 
-  scroll-margin-top: 135px;
+  scroll-margin-top: 165px;
 
   @media screen and (min-width: 768px) {
     margin-top: 100px;
+
+    scroll-margin-top: 135px;
   }
 }
 
 .main-content__feedback {
   margin: 50px 0 0;
 
-  scroll-margin-top: 122px;
+  scroll-margin-top: 135px;
 
   @media screen and (min-width: 1024px) {
     margin-top: 100px;
+
+    scroll-margin-top: 135px;
   }
 }
