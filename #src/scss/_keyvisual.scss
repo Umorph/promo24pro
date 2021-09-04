@@ -10,8 +10,7 @@
   justify-content: center;
   align-items: center;
 
-  background: $blackMain url("../img/background.jpg") center no-repeat;
-  background-size: cover;
+  background: $blackMain url("../img/background.jpg") center / auto 100% no-repeat;
 }
 
 .keyvisual__inner {
@@ -103,5 +102,67 @@
 
     font-size: 14px;
     line-height: 16px;
+  }
+}
+
+.keyvisual__list {
+  margin: 50px 0 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-gap: 20px;
+
+  list-style: none;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.keyvisual__item {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.keyvisual__service-link {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 18px 10px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $geometria;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: $trueWhite;
+  text-decoration: none;
+  text-align: center;
+
+  border: 1px solid $trueWhite;
+
+  @include smooth;
+
+  &:hover,
+  &:focus {
+    color: $blackMain;
+
+    background: rgba($trueWhite, 0.4);
+    border-color: rgba($trueWhite, 0.4);
+  }
+
+  &:active {
+    background: $trueWhite;
+    border-color: $trueWhite;
   }
 }
