@@ -58,3 +58,11 @@
     scroll-margin-top: 135px;
   }
 }
+
+.main-content__city-info {
+  margin: 25px 0 0;
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 50px;
+  }
+}
