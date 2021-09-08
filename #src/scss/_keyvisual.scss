@@ -82,11 +82,12 @@
   font-style: normal;
   font-size: 12px;
   line-height: 14px;
-  color: $blackMain;
+  color: $trueWhite;
   text-decoration: none;
 
-  background: $trueWhite;
+  background: none;
   border-radius: 50px;
+  border: 1px solid $trueWhite;
 
   cursor: pointer;
 
@@ -94,7 +95,9 @@
 
   &:hover,
   &:focus {
-    box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+    // box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+    background: $trueWhite;
+    color: #212121;
   }
 
   @media screen and (min-width: 768px) {
