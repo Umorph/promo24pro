@@ -66,3 +66,11 @@
     margin-top: 50px;
   }
 }
+
+.main-content__price-table {
+  margin: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 30px;
+  }
+}
