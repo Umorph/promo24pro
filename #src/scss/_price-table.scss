@@ -1,0 +1,111 @@
+@import "variables";
+@import "mixins";
+
+.price-table {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.price-table__heading {
+  margin: 0;
+  padding: 0;
+
+  font-family: $geometria;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 24px;
+  color: $blackMain;
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    line-height: 34px;
+  }
+}
+
+.price-table__inner {
+  margin: 20px 0 0;
+  padding: 0;
+  width: 100%;
+
+  overflow-x: scroll;
+  box-shadow: 0 5px 15px 10px #dbdbdb;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 35px;
+  }
+}
+
+.price-table__table {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.price-table__table-heading {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+
+  font-family: $geometria;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: $trueWhite;
+
+  background: $blackMain;
+
+  @media screen and (min-width: 768px) {
+    padding: 15px;
+
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.price-table__row {
+  margin: 0;
+  padding: 0;
+
+  @include smooth;
+
+  &:hover {
+    background-color: #e4e4e4;
+
+    cursor: pointer;
+  }
+}
+
+.price-table__cell {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+
+  font-family: $geometria;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: $blackMain;
+
+  &:not(:first-child) {
+    border-left: 1px solid #dbdbdb;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 15px;
+
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

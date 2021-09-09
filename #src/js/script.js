@@ -1,97 +1,46 @@
-// Header burger
-let burgerButton = document.querySelector('.page-navigation__burger-button'),
-burgerMenu = document.querySelector('.page-navigation__nav-list')
+// Checking webp support
+function testWebP(callback) {
+  let webP = new Image();
+  webP.onload = webP.onerror = function () {
+    callback(webP.height === 2);
+  };
+  webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+}
 
-burgerButton.addEventListener('click', function() {
-  burgerButton.classList.toggle('page-navigation__burger-button--opened')
-  burgerMenu.classList.toggle('page-navigation__nav-list--opened')
+// toggle class --opened for element
+function toggleOpenedClass(element) {
+  const openedClass = element.classList[0] + '--opened'
+  if (element.classList.contains(openedClass)) {
+    element.classList.remove(openedClass)
+  } else {
+    element.classList.add(openedClass)
+  }
+}
+
+// adds class webp for body, if browser support
+testWebP(function (support) {
+  if (support === true) {
+    document.querySelector('body').classList.add('webp');
+  }else{
+    document.querySelector('body').classList.add('no-webp');
+  }
+});
+
+//toggle burger menu
+const burgerButton = document.querySelector('.anchor-nav__burger-button'),
+  burgerWindow = document.querySelector('.anchor-nav__nav-list')
+
+burgerButton.addEventListener('click', () => {
+  toggleOpenedClass(burgerWindow)
+  toggleOpenedClass(burgerButton)
 })
 
-$(document).ready(function(){
-    $("a.nav-link, button.more").click(function(){
-        $("html, body").animate({
-            scrollTop: $($(this).attr("href")).offset().top - 150 + "px"
-        }, {
-            duration: 500,
-            easing: "swing"
-        });
-        return false;
-    });
-});
+//close burger window after click
+const anchorLinks = document.querySelectorAll('.anchor-nav__link')
 
-"use strict"
-
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form');
-    const callBack = document.getElementById('contacts');
-    form.addEventListener('submit', formSend);
-
-    async function formSend(e) {
-        e.preventDefault();
-
-        let error = formValidate(form);
-
-        let formData = new FormData(form);
-
-        if (error === 0) {
-            callBack.classList.add('_sending');
-            let response = await fetch('sendmail.php', {
-                method: 'POST',
-                body: formData
-            });
-            if (response.ok) {
-                let result = await response.json();
-                alert(result.message);
-                formPreview.innerHTML = '';
-                form.reset();
-                callBack.classList.remove('_sending');
-
-            } else {
-                alert ('Ошибка! Попробуйте связаться по телефону/почте');
-                callBack.classList.remove('_sending');
-            }
-        } else {
-            alert('Заполните обязательные поля!')
-        }
-    }
-
-    function formValidate(form) {
-        let error = 0;
-        let formReq = document.querySelectorAll('._req');
-
-        for (let index = 0; index < formReq.length; index++) {
-            const input = formReq[index];
-            formRemoveError(input);
-
-            if (input.classList.contains('_email')) {
-                if (emailTest(input)) {
-                    formAddError(input);
-                    error++;
-                }
-            } else {
-                if (input.value === '') {
-                    formAddError(input);
-                    error++;
-                }
-            }
-
-        }
-
-        return error;
-    }
-
-    function formAddError(input) {
-        input.parentElement.classList.add('_error');
-        input.classList.add('_error');
-    }
-
-    function formRemoveError(input) {
-        input.parentElement.classList.remove('_error');
-        input.classList.remove('_error');
-    }
-
-    //Функция текста email
-    function emailTest(input) {
-        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-    }
-});
+anchorLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    toggleOpenedClass(burgerWindow)
+    toggleOpenedClass(burgerButton)
+  })
+})

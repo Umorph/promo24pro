@@ -1,0 +1,151 @@
+@import "variables";
+@import "mixins";
+
+.footer {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  background: $blackMain;
+}
+
+.footer__inner {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px 20px 30px;
+  width: 100%;
+  max-width: 1160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    padding: 30px 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer__logo {
+  margin: 0;
+  padding: 0;
+
+  font-family: $geometria;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 24px;
+  color: $trueWhite;
+  text-decoration: none;
+}
+
+.footer__social-list {
+  margin: 30px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 30px 30px 30px;
+  grid-column-gap: 25px;
+
+  list-style: none;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.footer__social-item {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__social-link {
+  margin: 0;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+  }
+
+  @include smooth;
+}
+
+.footer__social-icon {
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.footer__contacts-list {
+  margin: 30px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  list-style: none;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    align-items: flex-start;
+  }
+}
+
+.footer__contacts-item {
+  margin: 0;
+  padding: 0;
+
+  &:not(:first-child) {
+    margin-top: 15px;
+  }
+}
+
+.footer__contacts-link {
+  position: relative;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: $geometria;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 20px;
+  color: $trueWhite;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 100%;
+
+    display: block;
+    height: 1px;
+
+    background: $trueWhite;
+
+    @include smooth
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      right: 0;
+    }
+  }
+}
