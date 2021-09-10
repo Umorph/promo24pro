@@ -95,9 +95,8 @@
 
   &:hover,
   &:focus {
-    // box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
     background: $trueWhite;
-    color: #212121;
+    color: $blackMain;
   }
 
   @media screen and (min-width: 768px) {
@@ -160,8 +159,7 @@
   &:focus {
     color: $blackMain;
 
-    background: rgba($trueWhite, 0.4);
-    border-color: rgba($trueWhite, 0.4);
+    background: $trueWhite;
   }
 
   &:active {
