@@ -4,8 +4,12 @@
   &.anim-active {
     animation: moveUp 0.5s ease-in-out forwards;
 
-    &--with-delay {
-      animation-delay: 0.3s;
+    &--with-delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    &--with-delay-400 {
+      animation-delay: 0.4s;
     }
   }
 }
