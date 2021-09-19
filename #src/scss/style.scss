@@ -1,19 +1,21 @@
-// DEBUG
-@import "old.scss";
+// Basic style components
 @import "mixins.scss";
 @import "variables.scss";
 @import "scaffolding.scss";
 @import "fonts.scss";
+// Styles for blocks (file order is important!)
 @import "anchor-nav";
 @import "header";
 @import "keyvisual";
 @import "about";
 @import "services";
 @import "feedback-form";
+@import "guarantees";
 @import "feedback";
 @import "city-info";
 @import "price-table";
 @import "creation-steps";
 @import "main-content";
 @import "footer";
+@import "animated";
 

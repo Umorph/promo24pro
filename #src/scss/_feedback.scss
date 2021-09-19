@@ -10,7 +10,7 @@
   justify-content: flex-start;
   align-items: center;
 
-  background: url("../img/call-back.jpg") center no-repeat;
+  background: $trueBlack url("../img/call-back.jpg") center no-repeat;
   background-size: cover;
 
   @media screen and (min-width: 768px) {
@@ -173,4 +173,8 @@
   }
 
   @include smooth;
+}
+
+.feedback__guarantees {
+  margin: 0;
 }
