@@ -106,17 +106,18 @@
   font-style: normal;
   font-size: 14px;
   line-height: 16px;
-  color: $blackMain;
+  color: $trueWhite;
 
-  background: $trueWhite;
-  border: none;
+  background: none;
+  border: 1px solid $trueWhite;
   border-radius: 50px;
 
   cursor: pointer;
 
   &:hover,
   &:focus {
-    box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+    background: $trueWhite;
+    color: $blackMain
   }
 
   @include smooth;

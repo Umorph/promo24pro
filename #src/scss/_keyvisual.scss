@@ -15,7 +15,7 @@
 
 .keyvisual__inner {
   box-sizing: border-box;
-  margin: 60px 0 100px;
+  margin: 60px 0 70px;
   padding: 0 20px;
   width: 100%;
   max-width: 1160px;
@@ -72,7 +72,7 @@
 .keyvisual__link {
   box-sizing: border-box;
   margin: 20px 0 0;
-  padding: 8px 40px;
+  padding: 10px 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,11 +82,12 @@
   font-style: normal;
   font-size: 12px;
   line-height: 14px;
-  color: $blackMain;
+  color: $trueWhite;
   text-decoration: none;
 
-  background: $trueWhite;
+  background: none;
   border-radius: 50px;
+  border: 1px solid $trueWhite;
 
   cursor: pointer;
 
@@ -94,11 +95,12 @@
 
   &:hover,
   &:focus {
-    box-shadow: 20px 20px 22px rgba(0,0,0,0.2);
+    background: $trueWhite;
+    color: $blackMain;
   }
 
   @media screen and (min-width: 768px) {
-    margin-top: 75px;
+    margin-top: 50px;
 
     font-size: 14px;
     line-height: 16px;
@@ -134,7 +136,7 @@
 .keyvisual__service-link {
   box-sizing: border-box;
   margin: 0;
-  padding: 18px 10px;
+  padding: 15px 7px;
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -157,8 +159,7 @@
   &:focus {
     color: $blackMain;
 
-    background: rgba($trueWhite, 0.4);
-    border-color: rgba($trueWhite, 0.4);
+    background: $trueWhite;
   }
 
   &:active {
