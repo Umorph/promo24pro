@@ -70,10 +70,10 @@
 
   &:hover,
   &:focus {
-    box-shadow: 0px 0px 20px rgba(255,255,255,1);
+    img {
+      filter: drop-shadow(0 0 8px $trueWhite);
+    }
   }
-
-  @include smooth;
 }
 
 .footer__social-icon {
@@ -85,6 +85,8 @@
   & img {
     width: 100%;
     height: auto;
+
+    @include smooth;
   }
 }
 
