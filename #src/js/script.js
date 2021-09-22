@@ -18,13 +18,13 @@ function toggleOpenedClass(element) {
 }
 
 // adds class webp for body, if browser support
-testWebP(function (support) {
-  if (support === true) {
-    document.querySelector('body').classList.add('webp');
-  }else{
-    document.querySelector('body').classList.add('no-webp');
-  }
-});
+// testWebP(function (support) {
+//   if (support === true) {
+//     document.querySelector('body').classList.add('webp');
+//   }else{
+//     document.querySelector('body').classList.add('no-webp');
+//   }
+// });
 
 //toggle burger menu
 const burgerButton = document.querySelector('.anchor-nav__burger-button'),
