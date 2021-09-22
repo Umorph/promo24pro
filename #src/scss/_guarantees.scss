@@ -51,15 +51,14 @@
   &::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 7px;
+    top: calc(50% - 5px);
+    left: 0;
 
     display: block;
-    width: 6px;
-    height: 6px;
+    width: 15px;
+    height: 15px;
 
-    background-color: $trueWhite;
-    border-radius: 50%;
+    background: url("../img/svg/star-icon.svg") center no-repeat;
 
     transform: translateY(-3px);
   }
