@@ -375,6 +375,28 @@ input::-webkit-inner-spin-button {
 }
 
 .header__logo {
+  margin-left: 20px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+.header__logo-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.header__logo-text {
   margin: 0;
   padding: 0;
   font-family: "Geometria", "helvetica", sans-serif;
@@ -2061,13 +2083,33 @@ input::-webkit-inner-spin-button {
 }
 
 .footer__logo {
+  margin-left: 20px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+.footer__logo-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.footer__logo-text {
   margin: 0;
   padding: 0;
   font-family: "Geometria", "helvetica", sans-serif;
-  font-weight: 700;
-  font-style: normal;
   font-size: 22px;
-  line-height: 24px;
+  font-weight: 700;
   color: #ffffff;
   text-decoration: none;
 }
@@ -2314,10 +2356,6 @@ input::-webkit-inner-spin-button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-
-  .header__logo {
-    margin-left: 20px;
   }
 
   .header__contacts-list {
@@ -2684,6 +2722,24 @@ input::-webkit-inner-spin-button {
 
   .main-content__city-info {
     margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__logo {
+    margin: 0;
+  }
+
+  .header__logo-text {
+    font-size: 20px;
+  }
+
+  .footer__logo {
+    margin: 0;
+  }
+
+  .footer__logo-text {
+    font-size: 20px;
   }
 }
 
